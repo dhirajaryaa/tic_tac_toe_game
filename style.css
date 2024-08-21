@@ -60,8 +60,32 @@ nav ul li {
 .gameInfo {
   padding: 0 5rem;
   font-family: "Baloo Bhaina 2", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 10px;
 }
 .gameInfo h1{
   font-size: 4vw;
   font-family: "Baloo Bhaina 2", cursive;
+}
+.gameInfo .imgBox img{
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+#reset {
+  all: unset;
+  margin: 0 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #dd223b;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+  font-size: 1.5rem;
+  &:hover{
+  background-color: #dd0320;
+
+  }
 }
