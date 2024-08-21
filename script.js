@@ -1,5 +1,4 @@
-console.log("Welcome to Game Tic Tac Toe");
-let music = new Audio("music.mp3");
+const reset = document.getElementById("reset");
 let turnMusic = new Audio("ting.mp3");
 let gameOverMusic = new Audio("gameover.mp3");
 let turn = "X";
@@ -34,7 +33,7 @@ const checkWinner = () => {
       }`;
       isGameOver = true;
       gameOverMusic.play();
-      document.querySelector(".imgBox").querySelector("img").style.width = "12vw"
+      document.querySelector(".imgBox").querySelector("img").style.width = "12vw";
     }
   });
 };
@@ -57,3 +56,19 @@ Array.from(boxes).forEach((box) => {
     }
   });
 });
+
+// Add onclick listener to reset button
+reset.addEventListener("click", () => {
+  console.log("reset clicked");
+  
+  let boxTexts = document.querySelectorAll(".boxtext");
+  Array.from(boxTexts).forEach((box)=>{
+    box.innerText = "";
+    isGameOver = false;
+    turn = "X";
+    (document.getElementsByClassName(
+      "info"
+    )[0].innerHTML = `Turn for ${turn}`);
+    document.querySelector(".imgBox").querySelector("img").style.width = "0";
+  })
+})
